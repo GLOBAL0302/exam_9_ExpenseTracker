@@ -58,14 +58,14 @@ const CategoryEdit: React.FC = () => {
   return (
     <>
       <div className="bg-white p-3">
-        <p>'Create Category</p>
+        <h3>{id? "Edit Category": "Create Category"}</h3>
         <Box component="form" onSubmit={onSubmit}>
           <DialogContent className="px-2">
             <div className="form-group  mb-3">
               <select
                 value={userInputCategory.category}
                 onChange={onChangeCategory}
-                className="form-horizontal"
+                className="form-select" aria-label="Default select example"
               >
                 <option value="income">Income</option>
                 <option value="expenses">Expense</option>

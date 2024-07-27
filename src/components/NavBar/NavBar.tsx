@@ -23,8 +23,12 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <Button variant="outlined" color="inherit">
-                Add
-                <ExposureIcon />
+                <NavLink
+                  className="text-decoration-none text-black"
+                  to={'/addRecord'}>
+                  Add
+                  <ExposureIcon />
+                </NavLink>
               </Button>
             </li>
           </ul>
