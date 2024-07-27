@@ -12,3 +12,7 @@ export interface IRecordState {
   category: string;
   createDate: string;
 }
+
+export interface IRecordsState extends IRecordState {
+  id:string
+}

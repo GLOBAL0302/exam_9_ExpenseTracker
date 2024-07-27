@@ -1,14 +1,16 @@
-import { ICategoriesState } from '../types';
+import { ICategoriesState, IRecordsState } from '../types';
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchAllCategories } from './finaceThunks';
 
 export interface financeSliceState {
   categories: ICategoriesState[];
+  records:IRecordsState[]
   categoryLoading: boolean;
 }
 
 const initialState: financeSliceState = {
   categories: [],
+  records:[],
   categoryLoading: false,
 };
 
