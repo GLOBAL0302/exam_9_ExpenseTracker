@@ -25,7 +25,8 @@ const NavBar = () => {
               <Button variant="outlined" color="inherit">
                 <NavLink
                   className="text-decoration-none text-black"
-                  to={'/addRecord'}>
+                  to={'/addRecord'}
+                >
                   Add
                   <ExposureIcon />
                 </NavLink>
