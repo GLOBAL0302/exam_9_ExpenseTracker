@@ -12,12 +12,12 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path="/"  element={<Records/>} />
+        <Route path="/" element={<Records />} />
         <Route path="/categories" element={<Categories />}></Route>
         <Route path="/categoryEdit" element={<CategoryEdit />}></Route>
         <Route path="/addRecord" element={<AddRecord />} />
         <Route path="/categories/:id" element={<CategoryEdit />}></Route>
-        <Route path="*" element={(<div>Cant not find this Page</div>)}/>
+        <Route path="*" element={<div>Cant not find this Page</div>} />
       </Routes>
     </>
   );

@@ -14,5 +14,5 @@ export interface IRecordState {
 }
 
 export interface IRecordsState extends IRecordState {
-  id:string
+  id: string;
 }
