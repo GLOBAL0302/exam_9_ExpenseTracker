@@ -25,3 +25,24 @@ export const fetchAllCategories = createAsyncThunk<
   }
   return [];
 });
+
+export const deleteOneCategory = createAsyncThunk<
+  void,
+  string,
+  { state: RootState }
+>('deleteOneCategory', async (id) => {
+  await axiosApi.delete(`/categories/${id}.json`);
+});
+
+export const updateCategoryInfo = createAsyncThunk<
+  void,
+  ICategoriesState,
+  { state: RootState }
+>('updateCategoryInfo', async (category) => {
+  const UpdatedCategory = {
+    title: category.title,
+    category: category.category,
+  };
+  console.log(category);
+  await axiosApi.put(`/categories/${category.id}.json`,  UpdatedCategory );
+});
