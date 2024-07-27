@@ -6,3 +6,9 @@ export interface ICategory {
 export interface ICategoriesState extends ICategory {
   id: string;
 }
+
+export interface IRecordState {
+  amount: number;
+  category: string;
+  createDate: string;
+}

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosApi from '../axiosApi';
-import { ICategoriesState, ICategory } from '../types';
+import { ICategoriesState, ICategory, IRecordState } from '../types';
 import { RootState } from '../app/store';
 
 export const createNewCategory = createAsyncThunk<
@@ -44,5 +44,13 @@ export const updateCategoryInfo = createAsyncThunk<
     category: category.category,
   };
   console.log(category);
-  await axiosApi.put(`/categories/${category.id}.json`,  UpdatedCategory );
+  await axiosApi.put(`/categories/${category.id}.json`, UpdatedCategory);
+});
+
+export const addRecordThunks = createAsyncThunk<
+  void,
+  IRecordState,
+  { state: RootState }
+>('addRecordThunk', async (record) => {
+  await axiosApi.post('/records.json', record);
 });
