@@ -1,0 +1,11 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+body {
+  background: url("https://img.freepik.com/free-vector/creative-geometric-design-space_53876-89787.jpg?w=1380&t=st=1722062631~exp=1722063231~hmac=45d89a6d1f787ee784e2ca70c119182a29acf31e1e1090c9dcb83fc42ffe1902")
+  no-repeat top center/cover;
+  height: 100vh;
+}
