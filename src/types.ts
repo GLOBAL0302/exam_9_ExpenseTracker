@@ -1,8 +1,8 @@
-export interface ICategory{
+export interface ICategory {
   category: string;
   title: string;
 }
 
-export interface ICategoriesState extends ICategory{
-  id:string
+export interface ICategoriesState extends ICategory {
+  id: string;
 }

@@ -3,7 +3,7 @@ import { FinanceReducer } from '../store/financeSlice';
 
 export const store = configureStore({
   reducer: {
-    finance:FinanceReducer
+    finance: FinanceReducer,
   },
 });
 

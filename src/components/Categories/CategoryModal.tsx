@@ -11,7 +11,6 @@ import { useState } from 'react';
 import { useAppDispatch } from '../../app/hooks';
 import { createNewCategory } from '../../store/finaceThunks';
 
-
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement<any, any>;
@@ -26,8 +25,8 @@ const initialInputState = {
 };
 
 interface Props {
-  open: boolean,
-  onCloseModal: VoidFunction,
+  open: boolean;
+  onCloseModal: VoidFunction;
 }
 
 const CategoryModal: React.FC<Props> = ({ open, onCloseModal }) => {
@@ -36,7 +35,7 @@ const CategoryModal: React.FC<Props> = ({ open, onCloseModal }) => {
 
   const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
-    setUserInputCategory(prevState => ({
+    setUserInputCategory((prevState) => ({
       ...prevState,
       [name]: value,
     }));
@@ -49,16 +48,15 @@ const CategoryModal: React.FC<Props> = ({ open, onCloseModal }) => {
     }));
   };
 
-
   const handleClose = () => {
     onCloseModal();
   };
 
-  const onSubmit = (e:React.FormEvent)=>{
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(createNewCategory(userInputCategory))
+    dispatch(createNewCategory(userInputCategory));
     onCloseModal();
-  }
+  };
 
   return (
     <>
@@ -71,7 +69,7 @@ const CategoryModal: React.FC<Props> = ({ open, onCloseModal }) => {
       >
         <DialogTitle>{'Create Category'}</DialogTitle>
         <Box component="form" onSubmit={onSubmit}>
-        <DialogContent className="px-5">
+          <DialogContent className="px-5">
             <div className="form-group  mb-3">
               <select onChange={onChangeCategory} className="form-horizontal">
                 <option value="income">Income</option>
@@ -82,13 +80,19 @@ const CategoryModal: React.FC<Props> = ({ open, onCloseModal }) => {
               <TextField
                 name="title"
                 onChange={onChangeTitle}
-                fullWidth id="standard-basic" label="title" variant="standard" />
+                fullWidth
+                id="standard-basic"
+                label="title"
+                variant="standard"
+              />
             </div>
-        </DialogContent>
-        <DialogActions>
-          <Button variant="outlined" type="submit">Add</Button>
-        </DialogActions>
-      </Box>
+          </DialogContent>
+          <DialogActions>
+            <Button variant="outlined" type="submit">
+              Add
+            </Button>
+          </DialogActions>
+        </Box>
       </Dialog>
     </>
   );
